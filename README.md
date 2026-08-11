@@ -52,18 +52,18 @@ Infrastructure
 ## Getting Started
 
 1. Clone the repository
-   git clone https://github.com/<your-name>/CareerRadar.git
+   git clone https://github.com/Dmytro-1506/CareerRadar.git
    cd CareerRadar
 2. Create environment files
    Copy:
 
-.env.example
-→ .env
+   .env.example
+   → .env
 
-backend/.env.example
-→ backend/.env
+   backend/.env.example
+   → backend/.env
 
-and update the values if necessary.
+   and update the values if necessary.
 
 3. Install dependencies
    npm install
@@ -73,8 +73,8 @@ and update the values if necessary.
    Frontend
    http://localhost:5173
 
-Backend
-http://localhost:3000
+   Backend
+   http://localhost:3000
 
 ## Contributing
 

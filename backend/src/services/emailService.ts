@@ -8,23 +8,42 @@ import { transporter } from "../config/mail";
 export async function sendEmail( to: string ) {
 
     const subject =
-        "Bewerbung um einen Platz für die betriebliche Praxisphase als Fachinformatiker für Anwendungsentwicklung";
+        "Anfrage zur betrieblichen Praxisphase – Fachinformatiker für Anwendungsentwicklung";
 
     const message =
-        "Empty message";
+        "";
 
-    const filePath =
+    const lebenslaufPath =
         path.join(
             process.cwd(),
-            "files",
-            "Bewerbungsunterlagen_Anwendungsentwickler_Dmytro_Shkilniuk.pdf"
+            "files/emailFiles",
+            "Fachinformatiker_für_Anwendungsentwicklung_Dmytro_Shkilniuk_Lebenslauf.pdf"
+        );
+    const anschreibenPath =
+        path.join(
+            process.cwd(),
+            "files/emailFiles",
+            "Fachinformatiker_für_Anwendungsentwicklung_Dmytro_Shkilniuk_Anschreiben.pdf"
+        );
+    const certificateGoitPath =
+        path.join(
+            process.cwd(),
+            "files/emailFiles",
+            "Dmytro_Shkilniuk_Fullstack_Developer_Certificate_GoIT.pdf"
+        );
+    
+    const zwieschenzeugnissComcavePath =
+        path.join(
+            process.cwd(),
+            "files/emailFiles",
+            "Shkilniuk_Dmytro_Umschulung_Fachinformatiker_Anwendungsentwicklung_Zwieschenzeugniss.pdf"
         );
 
     const htmlPath =
         path.join(
             process.cwd(),
-            "files",
-            "emailText.html"
+            "files/emailText",
+            "allgemeineEmailText.html"
         );
 
     const html =
@@ -42,8 +61,36 @@ export async function sendEmail( to: string ) {
         html,
         attachments:[
             {
-                filename: "Bewerbungsunterlagen_Anwendungsentwickler_Dmytro_Shkilniuk.pdf",
-                path: filePath
+                filename: "Fachinformatiker_für_Anwendungsentwicklung_Dmytro_Shkilniuk_Lebenslauf.pdf",
+                path: lebenslaufPath
+            },
+            {
+                filename: "Fachinformatiker_für_Anwendungsentwicklung_Dmytro_Shkilniuk_Anschreiben.pdf",
+                path: anschreibenPath
+            },
+            {
+                filename: "Shkilniuk_Dmytro_Umschulung_Fachinformatiker_Anwendungsentwicklung_Zwieschenzeugniss.pdf",
+                path: zwieschenzeugnissComcavePath
+            },
+            {
+                filename: "Dmytro_Shkilniuk_Fullstack_Developer_Certificate_GoIT.pdf",
+                path: certificateGoitPath
+            },
+            {
+                filename: "github.png",
+                path: path.join(
+                    process.cwd(),
+                    "files/images/github.png"
+                ),
+                cid: "github"
+            },
+            {
+                filename: "linkedin.png",
+                path: path.join(
+                    process.cwd(),
+                    "files/images/linkedin.png"
+                ),
+                cid: "linkedin"
             }
         ]
     });
